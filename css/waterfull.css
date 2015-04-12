@@ -1,0 +1,77 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+.waterfull-container {
+  position: relative;
+  margin: 20px auto;
+  padding: 20px;
+  width: 80%;
+  height: auto;
+  border: 1px solid gray; 
+  border-radius: 8px;
+}
+
+.waterfull-column {
+  position: relative;
+  float: left;
+  height: 10px;
+  margin: 10px;
+  padding: 0;
+  height: auto;
+}
+
+.item-container {
+  position: relative;
+  margin: 4px 0;
+}
+
+.template-container {
+  position: relative;
+}
+
+.flow-item {
+  width: 100%;
+  padding: 40px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(60, 60, 60, 0.2);
+  display: inline-block;
+  -webkit-animation:0.3s my_animation;
+  -moz-animation:0.3s my_animation;
+  -o-animation:0.3s my_animation;
+  animation:0.3s my_animation;
+}
+
+.img {
+  width: 95%;
+  margin: 0 auto;
+  height: 10px;
+  background: black;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes my_animation {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+@-webkit-keyframes my_animation {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+@-moz-keyframes my_animation {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+@-o-keyframes my_animation {
+  from { opacity:0; }
+  to { opacity:1; }
+}
