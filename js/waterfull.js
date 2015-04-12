@@ -47,7 +47,7 @@ angular.module( 'ui.Waterfull', [] )
 
           $scope.iw = minWidth( $scope.iw, totalWidth );
           $scope.mw = ( $scope.cl * ( mw + 20 )) + 44 + 'px';
-        }
+        };
 
         $scope.onResizeFunction();
 
@@ -105,7 +105,7 @@ angular.module( 'ui.Waterfull', [] )
               +     '<waterfull-column data="c"></waterfull-column>'
               +   '</div>'
               + '</div'
-    }
+    };
   }])
   .directive( 'waterfullColumn', function() {
     return {
@@ -118,7 +118,7 @@ angular.module( 'ui.Waterfull', [] )
       },
       replace: true,
       template: '<div ng-repeat="item in items track by $index" class="item-container"><flow-item type="item.type" data="item.data"></flow-item></div>'
-    }
+    };
   })
   .directive( 'flowItem', [ function() {
     return {
@@ -136,9 +136,9 @@ angular.module( 'ui.Waterfull', [] )
 
         $scope.getTemplateUrl = function() {
           return $scope.type;
-        }
+        };
       },
       template: '<div ng-include="getTemplateUrl()" class="template-container"></div>',
       replace: true
-    }
+    };
   }]);
