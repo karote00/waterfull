@@ -1,5 +1,3 @@
-'use strict';
-
 var app = angular.module( 'app', ['ui.Waterfull'] );
 
 app.controller( 'ctrl', [ '$scope', '$timeout', function( $scope, $timeout ) {
