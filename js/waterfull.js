@@ -129,8 +129,10 @@ angular.module( 'ui.Waterfull', [] )
       },
       controller: function( $scope, $timeout, getRandom ) {
         $timeout( function() {
-          for( var d in $scope.data ) {
-            $scope[d] = $scope.data[d];
+          if( typeof $scope.data != 'undefined' ) {
+            for( var d in $scope.data ) {
+              $scope[d] = $scope.data[d];
+            }
           }
         }, $scope.index * 500 );
 
