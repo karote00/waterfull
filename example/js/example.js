@@ -6,7 +6,7 @@ app.controller( 'ctrl', [ '$scope', '$timeout', function( $scope, $timeout ) {
 
   for( var i = 0; i < count; i++ ) {
     var bgc = 'rgba(' + getRandom( 255, 0 ) + ', ' + getRandom( 255, 0 ) + ', ' + getRandom( 255, 0 ) + ', ' + getRandom( 100, 0 ) / 100 + ')';
-    var h = getRandom( 100, 10 );
+    var h = getRandom( 100, 10 ) + 'px';
 
     $scope.items.push( { 
       count: i, 
