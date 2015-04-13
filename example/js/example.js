@@ -8,8 +8,7 @@ app.controller( 'ctrl', [ '$scope', '$timeout', function( $scope, $timeout ) {
     var bgc = 'rgba(' + getRandom( 255, 0 ) + ', ' + getRandom( 255, 0 ) + ', ' + getRandom( 255, 0 ) + ', ' + getRandom( 100, 0 ) / 100 + ')';
     var h = getRandom( 100, 10 ) + 'px';
 
-    $scope.items.push( { 
-      count: i, 
+    $scope.items.push({
       type: 'template/flow-item.html', 
       data: { bgc: bgc, h: h }
     });

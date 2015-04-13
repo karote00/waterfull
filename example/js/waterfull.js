@@ -29,7 +29,7 @@ angular.module( 'ui.Waterfull', [] )
           var totalWidth = $element[0].childNodes[0].clientWidth - 42;
     
           if( typeof $scope.column != 'undefined' ) {
-            if( typeof $scope.column == 'number') {
+            if( !isNaN($scope.column) ) {
               $scope.column = Math.floor( $scope.column );
             } else {
               console.log( 'Column should be a number!' );
@@ -46,11 +46,10 @@ angular.module( 'ui.Waterfull', [] )
               $scope.iw = singleColumnWidth / ( totalWidth / 100 ) + '%';
               $scope.cl = columnCount;
             } else if( $scope.itemWidth.indexOf('px') > -1 ) {
-              if( !checkFormat( $scope.itemWidth, '%') ) return; 
+              if( !checkFormat( $scope.itemWidth, 'px') ) return; 
 
               $scope.iw = $scope.itemWidth;
               $scope.cl = Math.floor( totalWidth / ( parseFloat( $scope.itemWidth.substr( 0, $scope.itemWidth.indexOf('px')) ) + 20 ));
-              if( $scope.cl > $scope.maxColumn ) $scope.cl = $scope.maxColumn;
             } else {
               if( isNaN($scope.itemWidth) ) {
                 console.log('The format of item-width is wrong!');
@@ -59,10 +58,14 @@ angular.module( 'ui.Waterfull', [] )
 
               $scope.iw = $scope.itemWidth + 'px';
               $scope.cl = Math.floor( totalWidth / ( parseFloat( $scope.itemWidth ) + 20 ));
-              if( $scope.cl > $scope.maxColumn ) $scope.cl = $scope.maxColumn;
             }
           }
 
+          if( !isNaN($scope.maxColumn) ) {
+            if( $scope.cl > $scope.maxColumn ) $scope.cl = $scope.maxColumn;
+          } else {
+            console.log('The format of max-column is wrong!');
+          }
           $scope.iw = minWidth( $scope.iw, totalWidth );
           $scope.mw = ( $scope.cl * ( $scope.iw + 20 )) + 44 + 'px';
         };
@@ -89,14 +92,17 @@ angular.module( 'ui.Waterfull', [] )
 
         function checkFormat( str, cp ) {
           var tem = str.substr( 0, str.indexOf(cp));
-          var af = str.substr( str.indexOf(cp) + 1 );
+          var af = str.substr( str.indexOf(cp) );
+          console.log(af);
+
           if( isNaN(tem) ) {
             console.log('The number before ' + cp + ' is not a number!');
             return false;
-          } else if ( af.length > 0 ) {
+          } else if ( af !== cp ) {
             console.log('The format of item-width is wrong!');
             return false;
           }
+
           return true;
         }
 
@@ -104,7 +110,7 @@ angular.module( 'ui.Waterfull', [] )
 
         function addItem() {
           c++;
-          if( c > $scope.items.length || $scope.cl == 0 ) return;
+          if( c > $scope.items.length || $scope.cl === 0 ) return;
           return checkHeight().then( function() {
             addItem();
           });
