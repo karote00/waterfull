@@ -35,7 +35,7 @@ In your data collections, every item has one required attribute and one optional
 。optional: data. Anything you want to bind to your template, or you can create a new directive in your js file to control it yourself. 
 
 *NECESSARY: 'data' doesn't support function and callback.
-```
+```javascript
 {
   type: (this item's template reference url), /** required */
   data: {
@@ -45,8 +45,7 @@ In your data collections, every item has one required attribute and one optional
 ```
 
 example
-```
-
+```javascript
 for( var i = 0; i < count; i++ ) {
   var bgc = 'rgba(' + getRandom( 255, 0 ) + ', ' + getRandom( 255, 0 ) + ', ' + getRandom( 255, 0 ) + ', ' + getRandom( 100, 0 ) / 100 + ')';
   var h = getRandom( 100, 10 ) + 'px';
@@ -63,6 +62,6 @@ function getRandom( range, init ) {
 }
 ```
 In html
-```
+```html
 <waterfull data="items" item-width="120px" max-column="5"></waterfull>
 ```
