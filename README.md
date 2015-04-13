@@ -34,7 +34,7 @@ In your data collections, every item has one required attribute and one optional
 
 *optional*: **data**. Anything you want to bind to your template, or you can create a new directive in your js file to control it yourself. 
 
-***NECESSARY**: 'data' doesn't support function and callback.
+* **NECESSARY**: 'data' doesn't support function and callback.
 ```javascript
 {
   type: (this item's template reference url), /** required */
