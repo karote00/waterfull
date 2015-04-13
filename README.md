@@ -62,3 +62,7 @@ function getRandom( range, init ) {
   return Math.floor(( Math.random() * range ) + init );
 }
 ```
+In html
+```
+<waterfull data="items" item-width="120px" max-column="5"></waterfull>
+```
