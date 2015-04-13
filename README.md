@@ -30,9 +30,9 @@ If your window is wide enough and you don't want too much columns, give this att
 ### data
 In your data collections, every item has one required attribute and one optional attribute.
 
-#required: type. Item's template reference url, so every item could use different template.
+*required*: type. Item's template reference url, so every item could use different template.
 
-#optional: data. Anything you want to bind to your template, or you can create a new directive in your js file to control it yourself. 
+*optional*: data. Anything you want to bind to your template, or you can create a new directive in your js file to control it yourself. 
 
 *NECESSARY: 'data' doesn't support function and callback.
 ```javascript
