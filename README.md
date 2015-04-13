@@ -1,5 +1,5 @@
 # waterfull
-A waterfull container boilerplate using AngulaJs 1.3.x
+A dynamic waterfull container boilerplate using AngulaJs 1.3.x
 
 ## example
 [example](http://plnkr.co/edit/psGtgDMKztoLJYDktDEQ?p=preview)
