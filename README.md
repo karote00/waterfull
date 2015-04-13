@@ -27,16 +27,16 @@ In your data collections, every item has one required attribute and one optional
 required: type. Item's template reference url, so every item could use different template.
 optional: data. Anything you want to bind to your template, or you can create a new directive in your js file to control it yourself. 
 *NECESSARY: 'data' doesn't support function and callback.
-'''
+```
 {
   type: (this item's template reference url), /** required */
   data: {
     (anything you want to bind to your template) /** optional */
   }
 }
-'''
+```
 
-'''
+```
 example
 
 for( var i = 0; i < count; i++ ) {
@@ -53,4 +53,4 @@ function getRandom( range, init ) {
   if( typeof init == 'undefined' ) init = 1;
   return Math.floor(( Math.random() * range ) + init );
 }
-'''
+```
